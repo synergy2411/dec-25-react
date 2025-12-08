@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Web Storage Demo</h1>
+    <script>
+      localStorage.setItem("token", "Bearer TOKEN_VALUE");
+      sessionStorage.setItem("favColor", "blue");
+
+      let marks = [99, 98, 97, 91, 89];
+      let total = 0;
+      for (let i = 0; i < marks.length; i++) {
+        total += marks[i];
+      }
+      console.log("Total Marks : ", total);
+
+      //   Functional Programming (Arrow Function)
+      marks.forEach((mark) => console.log("Mark : ", mark));
+
+      //   for...of loop
+      for (let mark of marks) {
+        console.log("Mark : ", mark);
+      }
+    </script>
+  </body>
+</html>
