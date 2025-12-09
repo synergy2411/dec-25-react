@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
+import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 
 let INITIAL_EXPENSES = [
   {
@@ -39,6 +40,12 @@ function Expenses() {
     closeFormHandler();
   };
 
+  const deleteExpenseHandler = (expenseId) => {
+    setExpenses((prevExpenses) =>
+      prevExpenses.filter((exp) => exp.id !== expenseId)
+    );
+  };
+
   const closeFormHandler = () => setToggleForm(false);
 
   return (
@@ -51,6 +58,9 @@ function Expenses() {
             </button>
           </div>
         </div>
+        <div className="col-4">
+          <ExpenseFilter />
+        </div>
       </div>
 
       {toggleForm && (
@@ -62,7 +72,7 @@ function Expenses() {
 
       <div className="row">
         {expenses.map((expense) => (
-          <ExpenseItem expense={expense} />
+          <ExpenseItem expense={expense} deleteExpense={deleteExpenseHandler} />
         ))}
       </div>
     </>

@@ -1,6 +1,6 @@
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
 
-function ExpenseItem({ expense }) {
+function ExpenseItem({ expense, deleteExpense }) {
   return (
     <div className="col-4">
       <div className="card">
@@ -11,6 +11,14 @@ function ExpenseItem({ expense }) {
           <p>Amount : ${expense.amount}</p>
           {/* <p>Created At : {expense.createdAt.toISOString()}</p> */}
           <ExpenseDate createdAt={expense.createdAt} />
+          <span className="float-end">
+            <button
+              className="btn btn-outline-danger btn-sm"
+              onClick={() => deleteExpense(expense.id)}
+            >
+              Delete
+            </button>
+          </span>
         </div>
       </div>
     </div>
