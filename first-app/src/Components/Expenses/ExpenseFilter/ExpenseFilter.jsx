@@ -1,7 +1,12 @@
-function ExpenseFilter() {
+function ExpenseFilter({ filterExpense }) {
   return (
     <div className="mb-3">
-      <select className="form-select form-select-lg" name="" id="">
+      <select
+        className="form-select form-select-lg"
+        name=""
+        id=""
+        onChange={(e) => filterExpense(e.target.value)}
+      >
         <option selected>Select one</option>
         <option value="2023">2023</option>
         <option value="2024">2024</option>

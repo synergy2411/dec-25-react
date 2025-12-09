@@ -30,6 +30,8 @@ function Expenses() {
 
   const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
 
+  const [selectedYear, setSelectedYear] = useState("");
+
   const onShowForm = () => {
     setToggleForm(!toggleForm);
     // toggleForm = true;     // NEVER EVER CHANGE THE STATE MUTABLY
@@ -46,6 +48,17 @@ function Expenses() {
     );
   };
 
+  const filterExpenseHandler = (selYear) => {
+    setSelectedYear(selYear);
+  };
+
+  let filteredExpenses = expenses;
+  if (selectedYear.trim() !== "") {
+    filteredExpenses = expenses.filter(
+      (expense) => expense.createdAt.getFullYear().toString() === selectedYear
+    );
+  }
+
   const closeFormHandler = () => setToggleForm(false);
 
   return (
@@ -59,7 +72,7 @@ function Expenses() {
           </div>
         </div>
         <div className="col-4">
-          <ExpenseFilter />
+          <ExpenseFilter filterExpense={filterExpenseHandler} />
         </div>
       </div>
 
@@ -71,7 +84,7 @@ function Expenses() {
       )}
 
       <div className="row">
-        {expenses.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem expense={expense} deleteExpense={deleteExpenseHandler} />
         ))}
       </div>
