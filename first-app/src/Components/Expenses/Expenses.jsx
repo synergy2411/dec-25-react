@@ -32,6 +32,8 @@ function Expenses() {
     // toggleForm = true;     // NEVER EVER CHANGE THE STATE MUTABLY
   };
 
+  const closeFormHandler = () => setToggleForm(false);
+
   return (
     <>
       <div className="row mb-4">
@@ -44,7 +46,7 @@ function Expenses() {
         </div>
       </div>
 
-      {toggleForm && <ExpenseForm />}
+      {toggleForm && <ExpenseForm closeForm={closeFormHandler} />}
 
       <div className="row">
         {expenses.map((expense) => (
