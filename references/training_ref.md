@@ -64,6 +64,11 @@
 
 - Quickly and efficiently rendering the UI
 
+### Side Effect
+
+- XHR Calls
+- State Management
+
 ### Atomic Design Principle
 
 - Atom : single unit. one button, one text field
@@ -124,5 +129,26 @@ Z = Patch; bug fixes
 
 > npm install bootstrap
 
-- Controlled elements
-- Uncontrolled elements
+- Controlled elements:
+
+  > re-render the component
+  > instant Feedback
+  > Registration Form
+
+- Uncontrolled elements:
+  > does not trigger the render cycle
+  > Login Form
+
+# Hooks
+
+- useEffect(cb) : for every render cycle
+- useEffect(cb, []) : cb will fire only once (at the time of initial rendering)
+- useEffect(cb, [Deps]):
+  > cb will fire for initial rendering
+  > cb will fire everytime whenever the dependencies will change
+- useEffect(cb -> cleanUpFn, [Deps])
+  > cb will fire for initial rendering
+  > Deps will change
+  > cleanUpFn will fire
+  > cb will fire
+  > cleanUpFn will also fire just before the component gets unloaded

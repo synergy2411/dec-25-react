@@ -1,6 +1,7 @@
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
 
 function ExpenseItem({ expense, deleteExpense }) {
+  console.log("Expense Item Comp");
   return (
     <div className="col-4">
       <div className="card">

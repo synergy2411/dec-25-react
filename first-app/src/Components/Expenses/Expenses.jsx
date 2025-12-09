@@ -32,10 +32,7 @@ function Expenses() {
 
   const [selectedYear, setSelectedYear] = useState("");
 
-  const onShowForm = () => {
-    setToggleForm(!toggleForm);
-    // toggleForm = true;     // NEVER EVER CHANGE THE STATE MUTABLY
-  };
+  const onShowForm = () => setToggleForm(!toggleForm);
 
   const addExpenseHandler = (newExpense) => {
     setExpenses((prevExpenses) => [newExpense, ...prevExpenses]);
@@ -48,9 +45,7 @@ function Expenses() {
     );
   };
 
-  const filterExpenseHandler = (selYear) => {
-    setSelectedYear(selYear);
-  };
+  const filterExpenseHandler = (selYear) => setSelectedYear(selYear);
 
   let filteredExpenses = expenses;
   if (selectedYear.trim() !== "") {
@@ -61,8 +56,10 @@ function Expenses() {
 
   const closeFormHandler = () => setToggleForm(false);
 
+  console.log("Expenses Comp");
   return (
     <>
+      <h1 className="text-center">My Expenses</h1>
       <div className="row mb-4">
         <div className="col-4 offset-4">
           <div className="d-grid">
@@ -85,7 +82,11 @@ function Expenses() {
 
       <div className="row">
         {filteredExpenses.map((expense) => (
-          <ExpenseItem expense={expense} deleteExpense={deleteExpenseHandler} />
+          <ExpenseItem
+            key={expense.id}
+            expense={expense}
+            deleteExpense={deleteExpenseHandler}
+          />
         ))}
       </div>
     </>
