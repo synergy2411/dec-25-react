@@ -33,6 +33,7 @@
 
 - MEAN Stack : MongoDB, Express, Angular, Node
 - MERN Stack : MongoDB, Express, React, Node
+- NextJS
 
 ### NoSQL Databases
 
@@ -71,7 +72,7 @@
 - Template : combo of organism. eg. Form -> Personal Details and professional details section
 - Page : a complete page
 
-Component : reusable piece of code
+### Component : reusable piece of code
 
 #### Thinking in React way
 
@@ -118,3 +119,7 @@ Z = Patch; bug fixes
 
 ~ : all minor version are compatible
 ^ : all patch version are compatible
+
+# To install bootstrap library
+
+> npm install bootstrap

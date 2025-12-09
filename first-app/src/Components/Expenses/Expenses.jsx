@@ -1,22 +1,37 @@
+import ExpenseItem from "./ExpenseItem/ExpenseItem";
+
 function Expenses() {
-  let expense = {
-    title: "shopping",
-    amount: 99,
-    createdAt: new Date("Dec 07, 2025"),
-    done: true,
-  };
+  let expenses = [
+    {
+      id: "e001",
+      title: "shopping",
+      amount: 99,
+      createdAt: new Date("Dec 07, 2025"),
+    },
+    {
+      id: "e002",
+      title: "planting",
+      amount: 89,
+      createdAt: new Date("Aug 04, 2024"),
+    },
+    {
+      id: "e003",
+      title: "grocery",
+      amount: 109,
+      createdAt: new Date("Sep 14, 2023"),
+    },
+  ];
 
   return (
-    <div>
-      <h3>Title : {expense.title}</h3>
-      <p>Amount : {expense.amount}</p>
-      <p>Created At : {expense.createdAt.toISOString()}</p>
-      {/* <p>{expense.done ? "Completed" : "Pending"}</p> */}
-      {expense.done && <p>Completed</p>}
-      {!expense.done && <p>Pending</p>}
+    <div className="row">
+      {expenses.map((expense) => (
+        <ExpenseItem expense={expense} />
+      ))}
     </div>
   );
 }
 
-// Only one Default Export
 export default Expenses;
+
+// Functional Interfaces -
+// Consumer, Supplier, Predicate,
