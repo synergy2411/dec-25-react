@@ -6,7 +6,7 @@ function ContextChildTwo() {
   return (
     <>
       <h2>Context Child Two Component</h2>
-      {context.isLoggedIn && <p>Protected Resource</p>}
+      {context.isLoggedInContext && <p>Protected Resource</p>}
     </>
   );
 }

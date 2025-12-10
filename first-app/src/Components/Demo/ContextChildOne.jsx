@@ -9,9 +9,11 @@ function ContextChildOne() {
             <h2>Context Child One Component</h2>
             <button
               className="btn btn-primary"
-              onClick={() => context.setIsLoggedIn(!context.isLoggedIn)}
+              onClick={() =>
+                context.setIsLoggedInContext(!context.isLoggedInContext)
+              }
             >
-              {context.isLoggedIn ? "Logout" : "Login"}
+              {context.isLoggedInContext ? "Logout" : "Login"}
             </button>
           </>
         );

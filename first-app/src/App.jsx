@@ -1,14 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Expenses from "./Components/Expenses/Expenses";
-import FormDemo from "./Components/Demo/FormDemo";
-import UseEffectDemo from "./Components/Demo/UseEffectDemo";
 import ContextParent from "./Components/Demo/ContextParent";
-import AuthContext from "./context/auth-context";
-import { useState } from "react";
+import AuthProvider from "./Components/Demo/AuthProvider";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   return (
     <div className="container">
       <h1 className="text-center">App Works!!!</h1>
@@ -17,9 +11,10 @@ function App() {
       {/* <UseEffectDemo /> */}
 
       <hr />
-      <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+
+      <AuthProvider>
         <ContextParent />
-      </AuthContext.Provider>
+      </AuthProvider>
 
       {/* <Expenses /> */}
     </div>
