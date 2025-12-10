@@ -165,3 +165,8 @@ Z = Patch; bug fixes
 - useReducer() : partial implementation of Redux Pattern, uni-directional data flow, complex state - one state slice is dependent on other state slice
 - Context API : App-wide data / Component branch / Shared Data
 - Redux Pattern : Central State Management tool / Unidirectional data flow pattern / Global state / more configuration
+
+## JavaSCript Datatypes
+
+- Primitive: number, boolean, string, symbol
+- Reference: array, object, function, date

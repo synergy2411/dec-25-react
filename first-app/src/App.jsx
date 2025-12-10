@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ContextParent from "./Components/Demo/ContextParent";
 import AuthProvider from "./Components/Demo/AuthProvider";
 import UseReducerDemo from "./Components/Demo/UseReducerDemo";
+import Parent from "./Components/Demo/Parent";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
 
       <hr />
 
-      <UseReducerDemo />
+      <Parent />
+
+      {/* <UseReducerDemo /> */}
 
       {/* <AuthProvider>
         <ContextParent />
