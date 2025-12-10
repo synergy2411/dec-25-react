@@ -166,7 +166,20 @@ Z = Patch; bug fixes
 - Context API : App-wide data / Component branch / Shared Data
 - Redux Pattern : Central State Management tool / Unidirectional data flow pattern / Global state / more configuration
 
-## JavaSCript Datatypes
+## JavaScript Datatypes
 
 - Primitive: number, boolean, string, symbol
 - Reference: array, object, function, date
+
+# Hooks
+
+- useState
+- useEffect
+- useRef
+- useContext
+- useMemo
+- useCallback
+- useReducer
+- Custom Hook: shared logic (useHookName)
+  > counter: increase, decrease, reset
+  > fetch: XHR Call
