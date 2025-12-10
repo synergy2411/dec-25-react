@@ -141,6 +141,12 @@ Z = Patch; bug fixes
 
 # Hooks
 
+## useState
+
+## useRef
+
+## useEffect
+
 - useEffect(cb) : for every render cycle
 - useEffect(cb, []) : cb will fire only once (at the time of initial rendering)
 - useEffect(cb, [Deps]):
@@ -152,3 +158,10 @@ Z = Patch; bug fixes
   > cleanUpFn will fire
   > cb will fire
   > cleanUpFn will also fire just before the component gets unloaded
+
+# State Management
+
+- useState() : local data for the component
+- useReducer() : partial implementation of Redux Pattern, uni-directional data flow, complex state
+- Context API : App-wide data / Component branch / Shared Data
+- Redux Pattern : Central State Management tool / Unidirectional data flow pattern / Global state / more configuration
