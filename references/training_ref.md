@@ -183,3 +183,7 @@ Z = Patch; bug fixes
 - Custom Hook: shared logic (useHookName)
   > counter: increase, decrease, reset
   > fetch: XHR Call
+
+# Error Boundary
+
+- Class based component

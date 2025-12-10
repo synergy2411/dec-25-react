@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Parent from "./Components/Demo/Parent";
+import Counter from "./Components/Demo/Counter";
+import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
 function App() {
   return (
     <div className="container">
@@ -9,7 +11,15 @@ function App() {
       {/* <UseEffectDemo /> */}
 
       <hr />
-      <Parent />
+      <ErrorBoundary>
+        <Counter />
+      </ErrorBoundary>
+
+      <hr />
+      <ErrorBoundary>
+        <Counter />
+      </ErrorBoundary>
+      {/* <Parent /> */}
 
       {/* <UseReducerDemo /> */}
 
