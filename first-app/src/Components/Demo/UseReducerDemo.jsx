@@ -1,5 +1,7 @@
 import { useReducer } from "react";
 
+import classes from "./UseReducerDemo.module.css";
+
 const initialState = {
   counter: 0,
   result: [],
@@ -30,6 +32,11 @@ function reducer(state, action) {
     return {
       ...state,
       result: [action.payload, ...state.result],
+    };
+  } else if (action.type === "DELETE_RESULT") {
+    return {
+      ...state,
+      result: state.result.filter((_, i) => i !== action.payload),
     };
   }
   return state;
@@ -88,7 +95,11 @@ function UseReducerDemo() {
 
       <ul className="list-group">
         {state.result.map((val, index) => (
-          <li key={index} className="list-group-item">
+          <li
+            key={index}
+            className={`list-group-item ${classes.clickable}`}
+            onClick={() => dispatch({ type: "DELETE_RESULT", payload: index })}
+          >
             {val}
           </li>
         ))}
