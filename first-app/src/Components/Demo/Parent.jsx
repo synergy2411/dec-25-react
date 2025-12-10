@@ -1,17 +1,18 @@
-import { useState, useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import Child from "./Child";
 import useFetchData from "../../hooks/use-fetch";
+import { useToggle } from "../../hooks/use-toggle";
 
 function Parent() {
-  const [toggle, setToggle] = useState(false);
-  const [show, setShow] = useState(false);
+  const [toggle, flipToggle] = useToggle(false);
+  const [show, flipShow] = useToggle(false);
 
   const [data] = useFetchData("https://jsonplaceholder.typicode.com/users");
   console.log("Parent Data : ", data);
   console.log("Parent renders");
 
   const dummyFunction = useCallback(
-    () => console.log("Dummy Function called"),
+    () => console.log("Dummy Function called", toggle),
     [toggle]
   );
 
@@ -30,13 +31,15 @@ function Parent() {
   return (
     <>
       <h1>Parent Component</h1>
-      <button onClick={() => setToggle(!toggle)} className="btn btn-primary">
+      <button onClick={flipToggle} className="btn btn-primary">
         Toggle
       </button>
 
-      <button className="btn btn-secondary" onClick={() => setShow(!show)}>
+      <button className="btn btn-secondary" onClick={flipShow}>
         Show/Hide
       </button>
+
+      {show && <p>Show is true now</p>}
       <Child
         toggle={true}
         dummyFunction={dummyFunction}
