@@ -221,3 +221,5 @@ Z = Patch; bug fixes
 
 > npm install better-sqlite3
 > node initdb.js
+
+> npm install react-spinners

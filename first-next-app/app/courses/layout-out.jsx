@@ -8,6 +8,3 @@ function CoursesLayout({ children }) {
 }
 
 export default CoursesLayout;
-
-
-// http://localhost:3000/courses/react
