@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import classes from "./image-picker.module.css";
 import Image from "next/image";
 
-function ImagePicker() {
+function ImagePicker({ name }) {
   const fileInputRef = useRef();
   const [pickedImage, setPickedImage] = useState(null);
 
@@ -27,7 +27,7 @@ function ImagePicker() {
       <input
         type="file"
         accept="image/jpeg, image/png"
-        name="image"
+        name={name}
         hidden
         ref={fileInputRef}
         onChange={imageChangeHandler}
@@ -44,7 +44,9 @@ function ImagePicker() {
         </div>
         <div className="col-8">
           <div className={classes["image-preview"]}>
-            {!pickedImage && <p>No image preview yet</p>}
+            {!pickedImage && (
+              <p className="text-center">No image preview yet</p>
+            )}
             {pickedImage && (
               <Image
                 fill

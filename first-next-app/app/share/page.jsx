@@ -1,4 +1,5 @@
 import ImagePicker from "@/components/image-picker";
+import { shareCourse } from "@/lib/actions";
 
 function ShareCoursePage() {
   return (
@@ -10,7 +11,7 @@ function ShareCoursePage() {
               <h2 className="text-center">
                 Share your learning with community
               </h2>
-              <form>
+              <form action={shareCourse}>
                 {/* title */}
                 <div className="form-floating mb-3">
                   <input
@@ -23,7 +24,6 @@ function ShareCoursePage() {
                   />
                   <label htmlFor="title">Course Title</label>
                 </div>
-
                 {/* creator */}
                 <div className="form-floating mb-3">
                   <input
@@ -61,7 +61,7 @@ function ShareCoursePage() {
                   <label htmlFor="duration">Course Duration</label>
                 </div>
                 {/* image */}
-                <ImagePicker />
+                <ImagePicker name="image" />
 
                 {/* button */}
                 <div className="row">
