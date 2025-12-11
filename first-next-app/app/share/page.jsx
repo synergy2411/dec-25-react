@@ -1,3 +1,5 @@
+import ImagePicker from "@/components/image-picker";
+
 function ShareCoursePage() {
   return (
     <>
@@ -59,7 +61,7 @@ function ShareCoursePage() {
                   <label htmlFor="duration">Course Duration</label>
                 </div>
                 {/* image */}
-                {/* IMAGE_PICKER */}
+                <ImagePicker />
 
                 {/* button */}
                 <div className="row">
