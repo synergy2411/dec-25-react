@@ -16,6 +16,11 @@ function MainNavigation() {
                 Courses
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/share">
+                Share
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>

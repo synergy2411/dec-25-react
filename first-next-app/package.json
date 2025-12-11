@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "better-sqlite3": "^12.5.0",
     "bootstrap": "^5.3.8",
     "next": "16.0.8",
     "react": "19.2.1",

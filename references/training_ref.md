@@ -214,3 +214,5 @@ Z = Patch; bug fixes
 ## React Server Component (RSC) and Client Side Component
 
 - "use client";
+
+## http://localhost:3000/share
