@@ -1,5 +1,6 @@
 "use server";
 
+import { redirect } from "next/navigation";
 import { saveCourse } from "./courses";
 
 export async function shareCourse(formData) {
@@ -11,5 +12,6 @@ export async function shareCourse(formData) {
     image: formData.get("image"),
   };
 
-  saveCourse(newCourse);
+  await saveCourse(newCourse);
+  redirect("/courses");
 }

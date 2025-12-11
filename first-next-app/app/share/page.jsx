@@ -1,3 +1,4 @@
+import FormSubmitStatus from "@/components/form-submit-status";
 import ImagePicker from "@/components/image-picker";
 import { shareCourse } from "@/lib/actions";
 
@@ -67,7 +68,7 @@ function ShareCoursePage() {
                 <div className="row">
                   <div className="col-4 offset-8">
                     <div className="d-grid">
-                      <button className="btn btn-primary">Share</button>
+                      <FormSubmitStatus />
                     </div>
                   </div>
                 </div>

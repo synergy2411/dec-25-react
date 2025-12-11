@@ -43,4 +43,5 @@ export async function saveCourse(course) {
       )
     `
   ).run(course);
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 }

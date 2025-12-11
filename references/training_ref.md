@@ -223,3 +223,4 @@ Z = Patch; bug fixes
 > node initdb.js
 
 > npm install react-spinners
+> npm install slugify
