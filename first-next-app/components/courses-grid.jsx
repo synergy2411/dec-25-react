@@ -1,7 +1,10 @@
 import CourseDetailsPage from "@/app/courses/[courseSlug]/page";
+import { getCourses } from "@/lib/courses";
 import Link from "next/link";
+import { Suspense } from "react";
 
-function CoursesGrid({ courses }) {
+async function CoursesGrid() {
+  const courses = await getCourses();
   return (
     <div className="row">
       {courses.map((course) => (

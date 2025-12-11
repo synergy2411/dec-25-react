@@ -1,13 +1,15 @@
 import CoursesGrid from "@/components/courses-grid";
-import { getCourses } from "@/lib/courses";
+import { Suspense } from "react";
+import { BounceLoader } from "react-spinners";
 
 // http://localhost:3000/courses
-async function CoursesPage() {
-  const courses = await getCourses();
+function CoursesPage() {
   return (
     <>
       <h1>Read our available courses</h1>
-      <CoursesGrid courses={courses} />
+      <Suspense fallback={<BounceLoader color="#e96868" size={120} />}>
+        <CoursesGrid />
+      </Suspense>
     </>
   );
 }
