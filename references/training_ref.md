@@ -216,3 +216,8 @@ Z = Patch; bug fixes
 - "use client";
 
 ## http://localhost:3000/share
+
+## Sqlite
+
+> npm install better-sqlite3
+> node initdb.js
