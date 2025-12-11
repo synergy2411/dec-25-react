@@ -175,15 +175,42 @@ Z = Patch; bug fixes
 
 - useState
 - useEffect
-- useRef
-- useContext
-- useMemo
-- useCallback
-- useReducer
+- useRef : reference of the DOM native element
+- useContext : consuming the Context API
+- useMemo : Optimized Child (memo())
+  > const memoizedValue = useMemo(() => () => {}, [deps])
+- useCallback :
+  > const memoizedCallback = useCallback(() => {}, [deps])
+- useReducer : to write complex state changing logic
 - Custom Hook: shared logic (useHookName)
-  > counter: increase, decrease, reset
-  > fetch: XHR Call
+  > useCounter: increase, decrease, reset
+  > useFetch: XHR Call
+  > useToggle
 
 # Error Boundary
 
-- Class based component
+- Class based component > componentDidCatch()
+
+# SPA and SSR
+
+- SPA : Single Page App
+
+  > Page does not reload in the browser
+  > Better UX
+  > Complete App is sent by the Server in one go
+  > Not Optimized for SEO
+
+- SSR : Server Side Rendering
+  > App already rendered on the server
+  > Browser quickly load the SSR Apps
+  > Highly optimized for SEO
+
+# NextJS : Server side framework for React Apps
+
+## Create NextJS Project
+
+> npx create-next-app@latest
+
+## React Server Component (RSC) and Client Side Component
+
+- "use client";
