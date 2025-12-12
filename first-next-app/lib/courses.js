@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const sqlite = require("better-sqlite3");
 const slugify = require("slugify");
+const xss = require("xss");
 const db = sqlite("courses.db");
 
 export async function getCourses() {
@@ -19,6 +20,7 @@ export async function saveCourse(course) {
   const extension = course.image.name.split(".").pop();
   const filename = `${course.slug}.${extension}`;
 
+  // course.title = xss(course.title);
   const stream = fs.createWriteStream(`public/images/${filename}`);
   const bufferedImage = await course.image.arrayBuffer();
   stream.write(Buffer.from(bufferedImage), (err) => {

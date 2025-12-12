@@ -1,12 +1,4 @@
-import { MongoClient } from "mongodb";
-const client = await MongoClient.connect(
-  "mongodb+srv://testuser:W0ysW2TQjBDcrt3K@mydemocluster.azfmt1j.mongodb.net/productdb?appName=MyDemoCluster"
-);
-console.log("Connected..");
-
-const db = client.db();
-
-const productsCollection = db.collection("products");
+import { productsCollection } from "@/mongo/db";
 
 // POST :  http://localhost:3000/api/products => Request Body
 export async function POST(request) {
@@ -27,5 +19,8 @@ export async function POST(request) {
 // GET :  http://localhost:3000/api/products
 export async function GET() {
   const allProducts = await productsCollection.find().toArray();
-  return Response.json(allProducts);
+  return Response.json(allProducts, { status: 200 });
 }
+
+// Singular Route
+// GET: http://localhost:3000/api/products/[productId]

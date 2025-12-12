@@ -217,6 +217,8 @@ Z = Patch; bug fixes
 
 ## http://localhost:3000/share
 
+## Server Action
+
 ## Sqlite
 
 > npm install better-sqlite3
@@ -224,3 +226,53 @@ Z = Patch; bug fixes
 
 > npm install react-spinners
 > npm install slugify
+
+http://localhost:3000/courses/abc/123/xyz/?key=value
+
+Mongo user : testuser
+Mongo Pass : W0ysW2TQjBDcrt3K
+Mongo SRV : mongodb+srv://testuser:W0ysW2TQjBDcrt3K@mydemocluster.azfmt1j.mongodb.net/?appName=MyDemoCluster
+
+# MongoDB Official Driver
+
+> npm install mongodb
+> node route.js
+
+- Mongo Server (NoSQL Database) (Embeded Documents)
+  > DB1 (productsdb)
+  > Coll1 (products)
+  > Doc1 (JSON format document) {title, price, ObjectId }
+  > Doc2 {title, qty}
+  > Doc3 {price, qty}
+  > Coll2
+  > Coll3
+  > DB2
+  > DB2
+
+## Embedded Document
+
+let person = {
+name : "",
+address :""
+cars : [ {model, price}, {model, price}]
+}
+
+## References
+
+let person = {objectID, name, address}
+
+let carOne = {person.ObjectID, make, model}
+let carTwo = {person.ObjectId, make, model}
+
+# Environment
+
+- local
+- development
+- production
+- staging
+- testing
+
+## Environment File
+
+- .env
+- .env.ENVIRONMENT ()

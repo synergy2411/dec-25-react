@@ -1,0 +1,13 @@
+{
+  "name": "sk-the-node-app",
+  "version": "2.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Sumit K",
+  "license": "ISC",
+  "description": "This is demo project"
+}
